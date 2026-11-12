@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NoWheel — Don’t reinvent the wheel</title>
+  <meta name="description" content="NoWheel is an agent skill that makes AI ask before design decisions, use real icon libraries, and reuse proven open source.">
+  <meta name="theme-color" content="#f1eee5">
+  <meta property="og:title" content="NoWheel — Don’t reinvent the wheel">
+  <meta property="og:description" content="An agent skill for pragmatic design and open-source reuse.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="mark" href="#top">NoWheel</a>
+    <span class="meta mono">Agent Skill · v1.0.0</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="kicker mono" data-reveal>Claude Code · Codex · Gemini CLI · Cursor</p>
+        <h1 class="hero__title">
+          <span class="line"><span data-line>Don’t reinvent</span></span>
+          <span class="line"><span data-line>the <em>wheel</em>.</span></span>
+        </h1>
+        <p class="hero__lead" data-reveal>NoWheel is an agent skill for interface work. It makes the agent ask before deciding, use real icon libraries, and reuse proven open source instead of rebuilding it.</p>
+        <div class="hero__actions" data-reveal>
+          <a class="btn" href="#install">Install <span aria-hidden="true">↓</span></a>
+          <a class="btn btn--quiet" href="https://github.com/qxii2027/NoWheel" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="hero__wheel" aria-hidden="true">
+        <svg class="wheel" viewBox="0 0 240 240">
+          <circle class="wheel__ring wheel__ring--outer" cx="120" cy="120" r="104"/>
+          <circle class="wheel__ring wheel__ring--inner" cx="120" cy="120" r="76"/>
+          <g class="wheel__spokes">
+            <path d="M120 16v208"/>
+            <path d="M16 120h208"/>
+            <path d="M46.4 46.4l147.2 147.2"/>
+            <path d="M193.6 46.4L46.4 193.6"/>
+          </g>
+          <circle class="wheel__hub" cx="120" cy="120" r="9"/>
+          <g class="wheel__orbit">
+            <circle cx="120" cy="16" r="4.5"/>
+          </g>
+        </svg>
+        <p class="rot mono"><span id="rot">000</span>°</p>
+      </div>
+    </section>
+
+    <section class="section" id="changes">
+      <div class="hair" aria-hidden="true"></div>
+      <div class="section__head">
+        <span class="num mono">01</span>
+        <h2>What changes</h2>
+      </div>
+      <div class="section__body">
+        <ol class="rules">
+          <li data-reveal>
+            <span class="rule__k mono">Ask</span>
+            <div>
+              <h3>Ask first.</h3>
+              <p>Layout, motion, dependency, license. When a decision is genuinely open, the agent stops and presents options.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="rule__k mono">Icons</span>
+            <div>
+              <h3>Use real icons.</h3>
+              <p>It detects the icon set already installed, searches real ids, and fetches the official SVG. No hand-drawn paths, no guessed names.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="rule__k mono">Reuse</span>
+            <div>
+              <h3>Reuse what works.</h3>
+              <p>Complex features start with a search: stars, maintenance, license, source. Adapt a proven implementation instead of rebuilding one.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="hair" aria-hidden="true"></div>
+      <div class="section__head">
+        <span class="num mono">02</span>
+        <h2>How it works</h2>
+      </div>
+      <div class="section__body">
+        <p class="how" data-reveal>One <code>SKILL.md</code> the harness loads. Three switches. Two zero-dependency Node tools.</p>
+        <div class="flow mono" data-reveal>
+          <span>task</span><span class="arrow">→</span><span>switches</span><span class="arrow">→</span><span>icon-tool / oss-scout</span><span class="arrow">→</span><span>code</span>
+        </div>
+        <p class="how__note" data-reveal>The agent reads the switches, calls a tool only while its rule is on, and writes the result into your project. No daemon, no database, no install step.</p>
+      </div>
+    </section>
+
+    <section class="section" id="install">
+      <div class="hair" aria-hidden="true"></div>
+      <div class="section__head">
+        <span class="num mono">03</span>
+        <h2>Install</h2>
+      </div>
+      <div class="section__body">
+        <p class="step" data-reveal>From GitHub, no clone:</p>
+        <div class="code" data-reveal>
+          <button class="copy mono" type="button">copy</button>
+          <pre><code>npx github:Qxii2027/NoWheel install <span class="nowrap">--project .</span></code></pre>
+        </div>
+
+        <p class="step" data-reveal>Or clone and install:</p>
+        <div class="code" data-reveal>
+          <button class="copy mono" type="button">copy</button>
+          <pre><code>git clone https://github.com/qxii2027/NoWheel.git
+node NoWheel/scripts/install.mjs <span class="nowrap">--project .</span></code></pre>
+        </div>
+
+        <p class="fine" data-reveal>Node 18+. No npm install. Prefer a zip? <a href="https://github.com/qxii2027/NoWheel/releases/latest">Releases ↗</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="use">
+      <div class="hair" aria-hidden="true"></div>
+      <div class="section__head">
+        <span class="num mono">04</span>
+        <h2>Use</h2>
+      </div>
+      <div class="section__body">
+        <p data-reveal>Restart the harness, then ask for interface work. The skill applies on its own.</p>
+
+        <p class="step" data-reveal>Toggle the three rules:</p>
+        <div class="code" data-reveal>
+          <button class="copy mono" type="button">copy</button>
+          <pre><code>node .agents/skills/nowheel/scripts/control.mjs</code></pre>
+        </div>
+
+        <p class="step" data-reveal>Search real icons:</p>
+        <div class="code" data-reveal>
+          <button class="copy mono" type="button">copy</button>
+          <pre><code>node .agents/skills/nowheel/scripts/icon-tool.mjs search "arrow up" <span class="nowrap">--prefix lucide</span></code></pre>
+        </div>
+
+        <p class="fine" data-reveal>Works in Claude Code, Codex, Gemini CLI, Copilot, Cline, Cursor, Windsurf, and anything that reads <code>AGENTS.md</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Built by <a href="https://github.com/qxii2027">Qxii2027</a></span>
+    <span class="mono">Apache-2.0 · v1.0.0</span>
+  </footer>
+
+  <script src="./vendor/gsap.min.js" defer></script>
+  <script src="./vendor/ScrollTrigger.min.js" defer></script>
+  <script src="./main.js" defer></script>
+</body>
+</html>

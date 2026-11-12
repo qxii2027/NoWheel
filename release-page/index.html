@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NoWheel — Don’t reinvent the wheel</title>
-  <meta name="description" content="NoWheel is an agent skill that makes AI ask before design decisions, use real icon libraries, and reuse proven open source.">
+  <title>NoWheel — 别再重新发明轮子</title>
+  <meta name="description" content="NoWheel 是一个 Agent Skill：让 AI 先问再做、使用真实图标库，并复用成熟的开源实现。">
   <meta name="theme-color" content="#f1eee5">
-  <meta property="og:title" content="NoWheel — Don’t reinvent the wheel">
-  <meta property="og:description" content="An agent skill for pragmatic design and open-source reuse.">
+  <meta property="og:title" content="NoWheel — 别再重新发明轮子">
+  <meta property="og:description" content="让 AI 先问再做、使用真实图标、复用成熟开源的 Agent Skill。">
   <meta property="og:type" content="website">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
@@ -17,7 +17,14 @@
 
   <header class="top">
     <a class="mark" href="#top">NoWheel</a>
-    <span class="meta mono">Agent Skill · v1.0.0</span>
+    <div class="top__right">
+      <span class="meta mono">Agent Skill · v1.0.0</span>
+      <div class="lang" role="group" aria-label="Language">
+        <button class="lang__btn mono" type="button" data-lang="zh" aria-pressed="true">中</button>
+        <span class="lang__sep" aria-hidden="true">/</span>
+        <button class="lang__btn mono" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
   </header>
 
   <main id="top">
@@ -25,12 +32,13 @@
       <div class="hero__copy">
         <p class="kicker mono" data-reveal>Claude Code · Codex · Gemini CLI · Cursor</p>
         <h1 class="hero__title">
-          <span class="line"><span data-line>Don’t reinvent</span></span>
-          <span class="line"><span data-line>the <em>wheel</em>.</span></span>
+          <span class="line"><span data-line data-i18n-html="heroLine1">别重新发明</span></span>
+          <span class="line"><span data-line data-i18n-html="heroLine2"><em>轮子</em>。</span></span>
         </h1>
-        <p class="hero__lead" data-reveal>NoWheel is an agent skill for interface work. It makes the agent ask before deciding, use real icon libraries, and reuse proven open source instead of rebuilding it.</p>
+        <p class="hero__lead" data-reveal data-i18n="heroLead">NoWheel 是一个面向界面开发的 Agent Skill。它让 AI 先问再做、使用真实图标库，并复用经过验证的开源实现，而不是从头造一遍。</p>
         <div class="hero__actions" data-reveal>
-          <a class="btn" href="#install">Install <span aria-hidden="true">↓</span></a>
+          <a class="btn btn--solid" href="https://github.com/qxii2027/NoWheel/releases/latest" target="_blank" rel="noreferrer"><span data-i18n="btnDownload">下载</span> <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="#install"><span data-i18n="btnInstall">安装</span> <span aria-hidden="true">↓</span></a>
           <a class="btn btn--quiet" href="https://github.com/qxii2027/NoWheel" target="_blank" rel="noreferrer">GitHub ↗</a>
         </div>
       </div>
@@ -54,33 +62,64 @@
       </div>
     </section>
 
-    <section class="section" id="changes">
+    <section class="section" id="install">
       <div class="hair" aria-hidden="true"></div>
       <div class="section__head">
         <span class="num mono">01</span>
-        <h2>What changes</h2>
+        <h2 data-i18n="sInstall">安装</h2>
+      </div>
+      <div class="section__body">
+        <a class="download" data-reveal href="https://github.com/qxii2027/NoWheel/releases/latest" target="_blank" rel="noreferrer">
+          <span class="download__tag mono">ZIP</span>
+          <span class="download__title" data-i18n="downloadTitle">下载最新版本</span>
+          <span class="download__meta mono">v1.0.0 · SHA-256</span>
+          <span class="download__arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <p class="step" data-reveal data-i18n="stepNpx">从 GitHub 直接安装，无需 clone：</p>
+        <div class="code" data-reveal>
+          <button class="copy mono" type="button" data-i18n="copy">复制</button>
+          <pre><code>npx github:Qxii2027/NoWheel install <span class="nowrap">--project .</span></code></pre>
+        </div>
+
+        <p class="step" data-reveal data-i18n="stepClone">或者 clone 后安装：</p>
+        <div class="code" data-reveal>
+          <button class="copy mono" type="button" data-i18n="copy">复制</button>
+          <pre><code>git clone https://github.com/qxii2027/NoWheel.git
+node NoWheel/scripts/install.mjs <span class="nowrap">--project .</span></code></pre>
+        </div>
+
+        <p class="fine" data-reveal data-i18n="fineInstall">需要 Node 18+，无需 npm install。</p>
+      </div>
+    </section>
+
+    <section class="section" id="changes">
+      <div class="hair" aria-hidden="true"></div>
+      <div class="section__head">
+        <span class="num mono">02</span>
+        <h2 data-i18n="sChanges">变化</h2>
       </div>
       <div class="section__body">
         <ol class="rules">
           <li data-reveal>
-            <span class="rule__k mono">Ask</span>
+            <span class="rule__k mono" data-i18n="askLabel">先问</span>
             <div>
-              <h3>Ask first.</h3>
-              <p>Layout, motion, dependency, license. When a decision is genuinely open, the agent stops and presents options.</p>
+              <h3 data-i18n="askTitle">先问，再动手。</h3>
+              <p data-i18n="askBody">布局、动效、依赖、许可证。只要决策真的存在分歧，AI 会停下来给出选项。</p>
             </div>
           </li>
           <li data-reveal>
-            <span class="rule__k mono">Icons</span>
+            <span class="rule__k mono" data-i18n="iconsLabel">图标</span>
             <div>
-              <h3>Use real icons.</h3>
-              <p>It detects the icon set already installed, searches real ids, and fetches the official SVG. No hand-drawn paths, no guessed names.</p>
+              <h3 data-i18n="iconsTitle">用真图标。</h3>
+              <p data-i18n="iconsBody">检测项目已有的图标库，搜索真实标识符，拉取官方 SVG。不画路径，不猜名字。</p>
             </div>
           </li>
           <li data-reveal>
-            <span class="rule__k mono">Reuse</span>
+            <span class="rule__k mono" data-i18n="reuseLabel">复用</span>
             <div>
-              <h3>Reuse what works.</h3>
-              <p>Complex features start with a search: stars, maintenance, license, source. Adapt a proven implementation instead of rebuilding one.</p>
+              <h3 data-i18n="reuseTitle">复用现成的。</h3>
+              <p data-i18n="reuseBody">复杂功能从检索开始：Star、维护状态、许可证、源码。基于成熟实现改造，而不是重写。</p>
             </div>
           </li>
         </ol>
@@ -90,39 +129,15 @@
     <section class="section" id="how">
       <div class="hair" aria-hidden="true"></div>
       <div class="section__head">
-        <span class="num mono">02</span>
-        <h2>How it works</h2>
-      </div>
-      <div class="section__body">
-        <p class="how" data-reveal>One <code>SKILL.md</code> the harness loads. Three switches. Two zero-dependency Node tools.</p>
-        <div class="flow mono" data-reveal>
-          <span>task</span><span class="arrow">→</span><span>switches</span><span class="arrow">→</span><span>icon-tool / oss-scout</span><span class="arrow">→</span><span>code</span>
-        </div>
-        <p class="how__note" data-reveal>The agent reads the switches, calls a tool only while its rule is on, and writes the result into your project. No daemon, no database, no install step.</p>
-      </div>
-    </section>
-
-    <section class="section" id="install">
-      <div class="hair" aria-hidden="true"></div>
-      <div class="section__head">
         <span class="num mono">03</span>
-        <h2>Install</h2>
+        <h2 data-i18n="sHow">原理</h2>
       </div>
       <div class="section__body">
-        <p class="step" data-reveal>From GitHub, no clone:</p>
-        <div class="code" data-reveal>
-          <button class="copy mono" type="button">copy</button>
-          <pre><code>npx github:Qxii2027/NoWheel install <span class="nowrap">--project .</span></code></pre>
+        <p class="how" data-reveal data-i18n-html="howText">一个由 harness 加载的 <code>SKILL.md</code>。三个开关。两个零依赖 Node 工具。</p>
+        <div class="flow mono" data-reveal>
+          <span data-i18n="flowTask">任务</span><span class="arrow">→</span><span data-i18n="flowSwitches">开关</span><span class="arrow">→</span><span>icon-tool / oss-scout</span><span class="arrow">→</span><span data-i18n="flowCode">代码</span>
         </div>
-
-        <p class="step" data-reveal>Or clone and install:</p>
-        <div class="code" data-reveal>
-          <button class="copy mono" type="button">copy</button>
-          <pre><code>git clone https://github.com/qxii2027/NoWheel.git
-node NoWheel/scripts/install.mjs <span class="nowrap">--project .</span></code></pre>
-        </div>
-
-        <p class="fine" data-reveal>Node 18+. No npm install. Prefer a zip? <a href="https://github.com/qxii2027/NoWheel/releases/latest">Releases ↗</a></p>
+        <p class="how__note" data-reveal data-i18n="howNote">AI 读取开关状态，只在对应规则开启时调用工具，然后把结果写进你的项目。没有守护进程，没有数据库，不需要安装。</p>
       </div>
     </section>
 
@@ -130,30 +145,30 @@ node NoWheel/scripts/install.mjs <span class="nowrap">--project .</span></code><
       <div class="hair" aria-hidden="true"></div>
       <div class="section__head">
         <span class="num mono">04</span>
-        <h2>Use</h2>
+        <h2 data-i18n="sUse">使用</h2>
       </div>
       <div class="section__body">
-        <p data-reveal>Restart the harness, then ask for interface work. The skill applies on its own.</p>
+        <p data-reveal data-i18n="useLead">重启 harness，然后提出界面需求。技能会自动生效。</p>
 
-        <p class="step" data-reveal>Toggle the three rules:</p>
+        <p class="step" data-reveal data-i18n="stepToggle">切换三条规则：</p>
         <div class="code" data-reveal>
-          <button class="copy mono" type="button">copy</button>
+          <button class="copy mono" type="button" data-i18n="copy">复制</button>
           <pre><code>node .agents/skills/nowheel/scripts/control.mjs</code></pre>
         </div>
 
-        <p class="step" data-reveal>Search real icons:</p>
+        <p class="step" data-reveal data-i18n="stepIcons">搜索真实图标：</p>
         <div class="code" data-reveal>
-          <button class="copy mono" type="button">copy</button>
+          <button class="copy mono" type="button" data-i18n="copy">复制</button>
           <pre><code>node .agents/skills/nowheel/scripts/icon-tool.mjs search "arrow up" <span class="nowrap">--prefix lucide</span></code></pre>
         </div>
 
-        <p class="fine" data-reveal>Works in Claude Code, Codex, Gemini CLI, Copilot, Cline, Cursor, Windsurf, and anything that reads <code>AGENTS.md</code>.</p>
+        <p class="fine" data-reveal data-i18n-html="fineUse">支持 Claude Code、Codex、Gemini CLI、Copilot、Cline、Cursor、Windsurf，以及任何读取 <code>AGENTS.md</code> 的 harness。</p>
       </div>
     </section>
   </main>
 
   <footer class="foot">
-    <span>Built by <a href="https://github.com/qxii2027">Qxii2027</a></span>
+    <span data-i18n-html="footerBuilt">作者 <a href="https://github.com/qxii2027">Qxii2027</a></span>
     <span class="mono">Apache-2.0 · v1.0.0</span>
   </footer>
 

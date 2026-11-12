@@ -150,16 +150,25 @@ node NoWheel/scripts/install.mjs <span class="nowrap">--project .</span></code><
       <div class="section__body">
         <p data-reveal data-i18n="useLead">重启 harness，然后提出界面需求。技能会自动生效。</p>
 
-        <p class="step" data-reveal data-i18n="stepToggle">切换三条规则：</p>
+        <h3 class="subhead" data-reveal data-i18n="panelTitle">控制面板</h3>
+        <p data-reveal data-i18n="panelLead">运行后在 127.0.0.1:4317 打开本地面板，三个开关分别控制：</p>
         <div class="code" data-reveal>
           <button class="copy mono" type="button" data-i18n="copy">复制</button>
-          <pre><code>node .agents/skills/nowheel/scripts/control.mjs</code></pre>
+          <pre><code>node <span class="nowrap">.agents/skills/nowheel/scripts/control.mjs</span></code></pre>
         </div>
+
+        <ul class="switches" data-reveal>
+          <li><span class="mono">ask</span><span data-i18n="switchAsk">决策前先问</span></li>
+          <li><span class="mono">icons</span><span data-i18n="switchIcons">图标工具链</span></li>
+          <li><span class="mono">oss</span><span data-i18n="switchOss">开源复用</span></li>
+        </ul>
+
+        <p class="fine" data-reveal data-i18n="panelNote">开关状态写入 skill.config.json，下次任务生效；命令行也可用 status / set / reset。</p>
 
         <p class="step" data-reveal data-i18n="stepIcons">搜索真实图标：</p>
         <div class="code" data-reveal>
           <button class="copy mono" type="button" data-i18n="copy">复制</button>
-          <pre><code>node .agents/skills/nowheel/scripts/icon-tool.mjs search "arrow up" <span class="nowrap">--prefix lucide</span></code></pre>
+          <pre><code>node <span class="nowrap">.agents/skills/nowheel/scripts/icon-tool.mjs</span> search "arrow up" <span class="nowrap">--prefix lucide</span></code></pre>
         </div>
 
         <p class="fine" data-reveal data-i18n-html="fineUse">支持 Claude Code、Codex、Gemini CLI、Copilot、Cline、Cursor、Windsurf，以及任何读取 <code>AGENTS.md</code> 的 harness。</p>

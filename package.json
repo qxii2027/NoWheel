@@ -1,0 +1,46 @@
+{
+  "name": "nowheel",
+  "version": "1.0.0",
+  "description": "NoWheel — Agent Skill: ask before design decisions, never hand-draw icons, and reuse proven open-source projects. Zero-dependency CLI tools for icon search and open-source scouting.",
+  "license": "Apache-2.0",
+  "author": "Qxii2027",
+  "homepage": "https://github.com/Qxii2027/NoWheel#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qxii2027/NoWheel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Qxii2027/NoWheel/issues"
+  },
+  "type": "module",
+  "bin": {
+    "nowheel": "scripts/install.mjs"
+  },
+  "files": [
+    "LICENSE",
+    "NOTICE",
+    "SKILL.md",
+    "INSTALL.md",
+    "HARNESSES.md",
+    "DISTRIBUTION.md",
+    "README.md",
+    "scripts"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "keywords": [
+    "nowheel",
+    "agent-skill",
+    "claude-code",
+    "codex",
+    "gemini-cli",
+    "icons",
+    "open-source",
+    "design-system"
+  ]
+}

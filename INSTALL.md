@@ -25,6 +25,8 @@ node scripts/install.mjs --project .      # project level + AGENTS.md + editor r
 
 ## Control panel
 
+Run these from the installed skill folder, or prefix them with its absolute path. Project installs live at `<project>/.agents/skills/nowheel/`; user-level installs at `~/.agents/skills/nowheel/` (and `~/.claude/skills/nowheel/`).
+
 ```bash
 node scripts/control.mjs            # opens http://127.0.0.1:4317
 node scripts/control.mjs status     # compact state for an agent

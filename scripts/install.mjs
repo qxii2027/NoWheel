@@ -470,11 +470,13 @@ async function installCommand(args) {
     process.stdout.write(`Mode: ${mode} · ${base}${opts.dryRun ? ' · dry run' : ''}\n\n`);
     printActions(actions, false);
     if (!conflicts.length) {
-      const first = actions.find((item) => item.action !== 'conflict');
-      process.stdout.write('\nNext: restart the harness, then verify with:\n');
-      process.stdout.write(
-        `node "${path.join(first ? first.path : base, 'scripts', 'doctor.mjs')}"\n`,
+      const skillAction = actions.find(
+        (item) => item.path && item.path.endsWith(path.join('skills', SKILL_NAME)),
       );
+      const skillDir = skillAction ? skillAction.path : base;
+      process.stdout.write('\nNext: restart the harness.\n');
+      process.stdout.write(`  verify: node "${path.join(skillDir, 'scripts', 'doctor.mjs')}"\n`);
+      process.stdout.write(`  panel:  node "${path.join(skillDir, 'scripts', 'control.mjs')}"\n`);
     }
   }
 
